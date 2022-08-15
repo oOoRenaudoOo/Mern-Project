@@ -1,4 +1,5 @@
 const UserModel = require("../models/user.model");
+// pour verifier les parametres passes par l'utilisateur
 const ObjectId = require("mongoose").Types.ObjectId;
 
 // tous les utilisateurs
