@@ -21,11 +21,11 @@ module.exports.signUpErrors = (err) => {
 module.exports.signInErrors = (err) => {
   let errors = { email: "", password: "" };
 
-  if (err.message.includes("email")) errors.email = err.message;
-
-  // if (err.message.includes("password"))
-  //   errors.password = "le mot de passe ne correspond pas";
-  errors.password = err.message;
+  if (err.message.includes("email")) 
+    errors.email = err.message;
+  
+  if (err.message.includes("mot de passe"))
+    errors.password = err.message;
 
   return errors;
 };

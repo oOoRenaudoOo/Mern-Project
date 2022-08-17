@@ -66,7 +66,7 @@ userSchema.statics.login = async function (email, password) {
     }
     if (password.length < 6)
       throw Error("le mot de passe doit avoir au moins 6 caracteres");
-    else throw Error("password incorrect");
+    else throw Error("mot de passe incorrect");
   }
   if (!isEmail(email)) throw Error("email incorrect");
   else throw Error("email inconnue");
