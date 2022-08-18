@@ -73,7 +73,7 @@ const UpdateProfil = () => {
 												<img src={user.picture} alt="user-pict" />
 												<h4>{user.pseudo}</h4>
 												<div className="follow-handler">
-													<FollowHandler idToFollow={user._id} />
+													<FollowHandler idToFollow={user._id} type={ "suggestion"} />
 												</div>
 											</li>
 										);
@@ -95,7 +95,7 @@ const UpdateProfil = () => {
 							}
 							if (nonTrouve) return (<li key={id}>{id} <h4></h4><h1>supp</h1></li>)
 							else return null;
-						})}
+						})}			
 						</ul>
 					</div>
 				</div>
@@ -115,7 +115,7 @@ const UpdateProfil = () => {
 												<img src={user.picture} alt="user-pict" />
 												<h4>{user.pseudo}</h4>
 												<div className="follow-handler">
-													<FollowHandler idToFollow={user._id} />
+													<FollowHandler idToFollow={user._id} type={"suggestion"} />
 												</div>
 											</li>
 										);
