@@ -16,7 +16,7 @@ const corsOptions = {
   credentials: true,
   'allowedHeaders': ['sessionId', 'Content-Type'],
   'exposedHeaders': ['sessionId'],
-  'methods': 'GET, HEAD, PUTCH, PATCH, POST, DELETE',
+  'methods': 'GET, HEAD, PUTCH, PATCH, POST, DELETE, PUT',
   'preflightContinue': false
 };
 app.use(cors(corsOptions));
