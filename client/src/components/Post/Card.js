@@ -1,8 +1,12 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import FollowHandler from './profil/FollowHandler';
-import { dateParser, isEmpty } from './utils';
+import FollowHandler from '../profil/FollowHandler';
+import { dateParser, isEmpty } from '../utils';
+import LikeButton from './LikeButton';
+
+
+
 
 const Card = ({ post }) => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +29,7 @@ const Card = ({ post }) => {
 								!isEmpty(usersData[0]) &&
 									usersData.map((user) => {
 										if (user._id === post.posterId) return user.picture;
+										else return null
 									}).join("")
 							} alt="poster-pict" />
 						</div>
@@ -36,8 +41,9 @@ const Card = ({ post }) => {
 									!isEmpty(usersData[0]) &&
 									usersData.map((user) => {
 										if (user._id === post.posterId) return user.pseudo;
+										else return null
 									})
-									}
+									.join("")}
 									</h3>
 									{ post.posterId !== userData._id && (
 										<FollowHandler idToFollow={post.posterId} type={ "card"} />	
@@ -45,6 +51,30 @@ const Card = ({ post }) => {
 								</div>
 								<span>{dateParser (post.createdAt)}</span>
 							</div>
+							<p>{post.message}</p>
+							{post.picture && (
+								<img src={ post.picture } alt="card-pict" className="card-pic" />
+							)}
+							{post.video && (
+								<iframe
+									width="500"
+									height="300"
+									src={post.video}
+									frameBorder="0"
+									allow="accelerometre; autoplay; clipboard-write, encrypted-media; gyroscope; picture-in-picture"
+									allowFullScreen
+									title={ post._id }>
+								</iframe>
+							)}
+							<div className="card-footer">
+								<div className="comment-icon">
+									<img src="./img/icons/message1.svg" alt="comment" />
+									<span>{ post.comments.length }</span>
+								</div>
+								<LikeButton post={ post } />
+								<img src="./img/icons/share.svg" alt="share" />
+							</div>
+
 						</div>
 					</>
 			)}

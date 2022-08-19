@@ -1,22 +1,33 @@
 import React,  { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../actions/post.actions';
-import Card from './Card';
+import Card from './Post/Card';
 import { isEmpty } from './utils';
 
 
 const Thread = () => {
 	const [loadPost, setLoadPost] = useState(true);
+	const [count, setCount] = useState(5);
 	const dispatch = useDispatch();
 	//recuperer les donnees stockees
 	const posts = useSelector((state) => state.postReducer );
+
+	const loadMore = () => {
+		if (window.innerHeight + document.documentElement.scrollTop + 1 > document.scrollingElement.scrollHeight) {
+			setLoadPost(true);
+		}
+	}
 	
 	useEffect(() => {
 		if (loadPost) {
-			dispatch(getPosts());
+			dispatch(getPosts(count));
 			setLoadPost(false);
+			setCount(count + 5);
 		}
-	}, [loadPost, dispatch]);
+		
+		window.addEventListener('scroll', loadMore);
+		return () => window.removeEventListener('scroll', loadMore);
+	}, [loadPost, dispatch, count]);
 
 
 
