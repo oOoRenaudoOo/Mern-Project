@@ -44,6 +44,7 @@ const SignInForm = () => {
             <label htmlFor="email">Email</label>
             <br />
             <input
+                autoComplete="off"
                 type="text"
                 name="email"
                 id="email"
@@ -54,6 +55,7 @@ const SignInForm = () => {
             <br />
             <label htmlFor="password">Mot de passe</label>
             <input
+                autoComplete="off"
                 type="password"
                 name="password"
                 id="password"

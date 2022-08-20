@@ -70,6 +70,7 @@ const SignUpForm = () => {
             <label htmlFor="pseudo">Pseudo</label>   
             <br />
             <input
+                autoComplete="off"
                 type="text"
                 name="pseudo"
                 id="pseudo"
@@ -81,6 +82,7 @@ const SignUpForm = () => {
             <label htmlFor="email">Email</label>   
             <br />
             <input
+                autoComplete="off"
                 type="text"
                 name="email"
                 id="email"
@@ -92,6 +94,7 @@ const SignUpForm = () => {
             <label htmlFor="password">Mot de passe</label>   
             <br />
             <input
+                autoComplete="off"
                 type="password"
                 name="password"
                 id="password"
@@ -103,6 +106,7 @@ const SignUpForm = () => {
             <label htmlFor="password-conf">Confirmer le mot de passe</label>   
             <br />
             <input
+                autoComplete="off"
                 type="password"
                 name="password"
                 id="password-conf"

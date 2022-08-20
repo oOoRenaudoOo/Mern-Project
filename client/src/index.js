@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import './styles/index.scss';
 
@@ -22,11 +22,9 @@ store.dispatch(getUsers());
 
 
 
-ReactDOM.render(
-  <Provider  store={ store }>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+createRoot(document.getElementById('root')).render(
+    <Provider  store={ store }>
+      <App />
+    </Provider>);
 
 
