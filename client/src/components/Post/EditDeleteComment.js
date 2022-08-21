@@ -50,6 +50,7 @@ const EditDeleteComment = ({comment, postId}) => {
 					</label>
 					<br />
 					<input
+						autoComplete="off"
 						type="text"
 						name="text"
 						onChange={(e) => setText(e.target.value)}
