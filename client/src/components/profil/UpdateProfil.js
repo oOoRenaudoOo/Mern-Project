@@ -85,20 +85,6 @@ const UpdateProfil = () => {
 								return null;
 							})	
 						}
-						{/* </ul> */}
-	
-						<h3>Utilisateurs abonnes non trouves</h3>	
-						{ userData.followers.map((id) => {
-							let nonTrouve = true;
-							for (let i = 0; i < usersData.length; i++) {
-								if (id === usersData[i]._id) {
-									nonTrouve = false;
-									return null;
-								}
-							}
-							if (nonTrouve) return (<li key={id}>{id} <h4></h4><h1>supp</h1></li>)
-							else return null;
-						})}			
 						</ul>
 					</div>
 				</div>
@@ -126,20 +112,6 @@ const UpdateProfil = () => {
 								}
 								return null;
 							})}
-						{/* </ul> */}
-
-						<h3>Utilisateurs suivis non trouves</h3>
-						{ userData.following.map((id) => {
-							let nonTrouve = true;
-							for (let i = 0; i < usersData.length; i++) {
-								if (id === usersData[i]._id) {
-									nonTrouve = false;
-									return null;
-								}
-							}
-							if (nonTrouve) return (<li key={id}>{id} <h4></h4><h1>supp</h1></li>)
-							else return null;
-						})}
 						</ul>
 					</div>
 				</div>
